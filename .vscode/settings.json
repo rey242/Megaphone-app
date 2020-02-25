@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Rey's Laptop\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
+    "python.pythonPath": "C:\\kivy_venv\\Scripts\\python.exe",
+    "python.autoComplete.extraPaths":["C:\\kivy_venv\\Lib\\site-packages"]
 }

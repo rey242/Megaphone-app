@@ -1,0 +1,14 @@
+#:kivy 1.11.1
+<MyGrid>:
+    GridLayout:
+        cols:5
+        size: root.width, root.height
+        Image:
+            source: 'logo.png'
+        Button:
+            text: 'Send Message'
+            size_hint: (.25, .25)
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            on_press: app.on_press_button()
+            background_color: [1,0,0,1]
+        
