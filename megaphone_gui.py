@@ -26,18 +26,18 @@ class MegaphoneApp(App):
         em.set_password("07dc82c500f623")
         em.set_email_name('Rey')
         message = f"""\
-        Subject: Hi Mailtrap - SSL
-        To: {msg.receiver}
-        From: {em.email_name} <{em.address}>
+Subject: Hi Mailtrap - SSL
+To: {msg.receiver}
+From: {em.email_name} <{em.address}>
 
-        This is a test e-mail message from SSL."""
+This is a test e-mail message from SSL. Hi from Kivy too!"""
 
         message_open = f"""\
-        Subject: Hi Mailtrap - Open
-        To: {msg.receiver}
-        From: {em.email_name} <{em.address}>
+Subject: Hi Mailtrap - Open
+To: {msg.receiver}
+From: {em.email_name} <{em.address}>
 
-        This is a test e-mail message from Open."""
+This is a test e-mail message from Open. Hi from Kivy too!"""
 
         msg.send_text_email(em,message_open)
 
