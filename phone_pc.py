@@ -1,16 +1,16 @@
-from twilio.rest import Client
+from twilio.rest import Client 
 import keyring
 
-class PcTexting:
+class PcPhone:
     def __init__(self):
         self.username = 'default'
+        self.account_sid = None
         self.auth_token = None
         self.recip = None
         self.sender = None
-        self.message = None
-        self.mms_server = None
-        self.post_server = None
-        self.status_callback = None
+        self.recording = None
+        self.voice_message = None
+        self.twml = None
 
     def set_account_sid(self, sid):
         keyring.set_password('Megaphone',self.username + '-sid',sid)
@@ -32,20 +32,23 @@ class PcTexting:
 
     def set_sender(self, sender):
         self.sender = sender
+
+    def set_recording(self,record):
+        self.recording = record
     
-    def set_message(self, message):
-        self.message = message
+    def set_voice_message(self,msg):
+        self.voice_message = msg
 
-    def set_status_callback(self, sc):
-        self.status_callback = sc
+    def set_twml(self,twmil):
+        self.twml = twmil
 
-    def send_text_message(self):
+    def call_recip(self):
         client = Client(self.get_account_sid(), self.get_auth_token())
-        msg = client.messages.create(
+        call = client.calls.create(
             to=self.recip,
             from_=self.sender,
-            status_callback=self.status_callback,
-            body=self.message
-            
+            url=self.twml,
+            twiml= self.voice_message,
+            method='GET'
         )
-        return "Message Sent.",msg
+        return 'Call Sent.',call.sid

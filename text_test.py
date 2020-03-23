@@ -6,12 +6,12 @@ class SmsTest(unittest.TestCase):
     def test_account(self):
         sms = PcTexting()
         sms.set_account_sid('ACa00701c3867a69f3eef76f84bc7ddd5a')
-        self.assertEqual(sms.account_sid,'ACa00701c3867a69f3eef76f84bc7ddd5a')
+        self.assertEqual(sms.get_account_sid(),'ACa00701c3867a69f3eef76f84bc7ddd5a')
 
     def test_auth_token(self):
         sms = PcTexting()
         sms.set_auth_token('64e14618a92ef536a354b97be1381986')
-        self.assertEqual(sms.auth_token,'64e14618a92ef536a354b97be1381986')
+        self.assertEqual(sms.get_auth_token(),'64e14618a92ef536a354b97be1381986')
         
     def test_recip(self):
         sms = PcTexting()
