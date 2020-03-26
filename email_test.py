@@ -41,11 +41,11 @@ class EmailTest(unittest.TestCase):
         em.set_email_name('A user')
         
         message = f"""\
-        Subject: Hi Mailtrap - class
+        Subject: Help! Something is Wrong!
         To: {msg.receiver}
         From: {em.email_name} <{em.address}>
             
-        This is a test e-mail message from class."""
+        Help! Something is Wrong!."""
         
         self.assertEqual(msg.send_text_email(em, message),"Message Sent")
     
